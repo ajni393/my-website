@@ -1,196 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Star Boy | Pianist & Music Expert</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    background:#111;
-    color:#fff;
-    line-height:1.6;
-}
-
-header{
-    background:linear-gradient(to right, #000, #222);
-    text-align:center;
-    padding:80px 20px;
-}
-
-header h1{
-    font-size:4rem;
-    color:gold;
-}
-
-header p{
-    font-size:1.3rem;
-    margin-top:10px;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:gold;
-    color:#000;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:white;
-    transform:scale(1.05);
-}
-
-section{
-    padding:60px 20px;
-    max-width:1000px;
-    margin:auto;
-}
-
-h2{
-    color:gold;
-    margin-bottom:20px;
-    text-align:center;
-}
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:#222;
-    padding:20px;
-    border-radius:10px;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.gallery{
-    text-align:center;
-}
-
-.gallery img{
-    width:300px;
-    max-width:100%;
-    border-radius:10px;
-    margin:10px;
-}
-
-.contact{
-    text-align:center;
-}
-
-footer{
-    background:#000;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-}
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kihiihi Community Church — a welcoming church family growing in faith, serving together, and blessing our community." />
+  <title>Kihiihi Community Church | Growing in Faith</title>
+  <style>
+    :root { --green:#174b3b; --deep:#0e3027; --gold:#dcae55; --cream:#fffaf0; --ink:#1d2924; --muted:#66746d; --white:#fff; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family: Georgia, 'Times New Roman', serif; color:var(--ink); background:var(--cream); line-height:1.6; }
+    .sans { font-family: Arial, Helvetica, sans-serif; }
+    .topbar { background:var(--deep); color:#e9f2ed; text-align:center; padding:8px 20px; font:14px Arial,sans-serif; }
+    header { background:var(--white); border-bottom:1px solid #e6e1d7; position:sticky; top:0; z-index:10; }
+    nav { max-width:1180px; margin:auto; min-height:76px; display:flex; align-items:center; justify-content:space-between; padding:0 24px; }
+    .brand { display:flex; align-items:center; gap:12px; color:var(--green); text-decoration:none; font-weight:bold; font-size:19px; }
+    .cross { width:40px; height:40px; border-radius:50%; display:grid; place-items:center; background:var(--gold); color:var(--deep); font-size:25px; }
+    .nav-links { display:flex; gap:25px; list-style:none; align-items:center; }
+    .nav-links a { color:var(--ink); text-decoration:none; font:14px Arial,sans-serif; font-weight:bold; }
+    .nav-links a:hover { color:var(--gold); }
+    .menu { display:none; border:0; background:none; font-size:28px; color:var(--green); }
+    .hero { min-height:570px; display:grid; place-items:center; text-align:center; padding:90px 20px; color:white; background:linear-gradient(90deg,rgba(14,48,39,.93),rgba(23,75,59,.70)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1800&q=85') center/cover; }
+    .hero-inner { max-width:760px; }
+    .eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:3px; font:bold 13px Arial,sans-serif; }
+    h1 { font-size:clamp(42px,7vw,76px); line-height:1.08; margin:18px 0; }
+    .hero p { font-size:20px; max-width:600px; margin:auto; }
+    .buttons { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:30px; }
+    .btn { display:inline-block; padding:13px 24px; border-radius:4px; text-decoration:none; font:bold 14px Arial,sans-serif; transition:.2s; }
+    .btn-primary { background:var(--gold); color:var(--deep); }
+    .btn-outline { border:1px solid white; color:white; }
+    .btn:hover { transform:translateY(-2px); filter:brightness(1.08); }
+    section { padding:80px 24px; }
+    .container { max-width:1120px; margin:auto; }
+    .section-heading { text-align:center; max-width:650px; margin:0 auto 42px; }
+    .section-heading h2 { color:var(--green); font-size:clamp(30px,4vw,46px); margin:8px 0 12px; }
+    .section-heading p { color:var(--muted); }
+    .welcome { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .welcome img { width:100%; border-radius:6px; box-shadow:18px 18px 0 var(--gold); }
+    h2 { color:var(--green); font-size:38px; line-height:1.15; }
+    h3 { color:var(--green); margin:10px 0; }
+    .quote { font-size:23px; color:var(--green); border-left:4px solid var(--gold); padding-left:18px; margin:24px 0; }
+    .schedule { background:#edf3ed; }
+    .schedule-grid, .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .service-card, .card { background:white; padding:28px; border-radius:6px; box-shadow:0 5px 20px #183c2912; }
+    .service-card .day { color:var(--gold); font:bold 13px Arial,sans-serif; letter-spacing:1px; text-transform:uppercase; }
+    .service-card strong { display:block; font-size:24px; color:var(--green); margin:8px 0; }
+    .icon { font-size:30px; }
+    .card p { color:var(--muted); font-family:Arial,sans-serif; font-size:15px; }
+    .events { background:var(--green); color:white; }
+    .events .section-heading h2, .events .section-heading p { color:white; }
+    .event { display:flex; gap:20px; align-items:center; background:#ffffff12; border:1px solid #ffffff25; padding:20px; border-radius:6px; }
+    .date { min-width:60px; text-align:center; color:var(--gold); font:bold 13px Arial,sans-serif; }
+    .date b { display:block; font-size:30px; line-height:1; }
+    .event h3 { color:white; margin:0; }
+    .event p { color:#d8e6df; font:14px Arial,sans-serif; }
+    .contact { display:grid; grid-template-columns:1fr 1fr; gap:50px; }
+    .contact-list { list-style:none; margin-top:22px; font-family:Arial,sans-serif; }
+    .contact-list li { margin:15px 0; }
+    form { display:grid; gap:13px; }
+    input, textarea { width:100%; border:1px solid #d9d8d0; padding:14px; border-radius:4px; background:white; font:15px Arial,sans-serif; }
+    textarea { min-height:120px; resize:vertical; }
+    footer { background:var(--deep); color:#dbe9e2; padding:38px 24px; text-align:center; font:14px Arial,sans-serif; }
+    footer .brand { color:white; justify-content:center; margin-bottom:12px; }
+    @media(max-width:760px) { .menu { display:block; } .nav-links { display:none; position:absolute; left:0; right:0; top:76px; background:white; padding:20px 24px; flex-direction:column; align-items:flex-start; box-shadow:0 8px 15px #0001; } .nav-links.open { display:flex; } .welcome,.contact { grid-template-columns:1fr; gap:35px; } .schedule-grid,.cards { grid-template-columns:1fr; } section { padding:60px 20px; } }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>STAR BOY</h1>
-    <p><strong>Amenjildo Odeke</strong> | Professional Pianist & Music Expert</p>
-    <a href="#contact" class="btn">Book Me</a>
-</header>
-
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        My name is <strong>Star Boy</strong>, also known as
-        <strong>Amenjildo Odeke</strong>. I am a professional pianist and
-        music expert with a passion for creating beautiful music and
-        unforgettable performances. I perform at concerts, weddings,
-        church services, corporate events, and private functions.
-        My mission is to inspire and connect people through music.
-    </p>
-</section>
-
-<section id="services">
-    <h2>My Services</h2>
-
-    <div class="services">
-
-        <div class="card">
-            <h3>🎹 Live Piano Performance</h3>
-            <p>
-                Professional piano performances for weddings,
-                concerts, churches, and special events.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🎵 Music Lessons</h3>
-            <p>
-                Private piano and music training for beginners,
-                intermediate, and advanced students.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🎼 Music Production</h3>
-            <p>
-                Music arrangement, composition, recording,
-                and performance support.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section id="gallery">
-    <h2>Gallery</h2>
-
-    <div class="gallery">
-
-        <img src="https://via.placeholder.com/300x200"
-             alt="Performance Photo">
-
-        <img src="https://via.placeholder.com/300x200"
-             alt="Piano Performance">
-    </div>
-</section>
-
-<section id="contact" class="contact">
-    <h2>Contact Me</h2>
-
-    <p>📧 Email: muteesiparvindesire@email.com</p>
-    <p>📱 Phone: +256 55273758</p>
-    <p>📷 Instagram: @lightning</p>
-    <p>🎵 Facebook: Star Boy Music</p>
-
-    <br>
-
-    <a href="https://wa.me/25655273758" class="btn">
-        WhatsApp Me
-    </a>
-</section>
-
-<footer>
-    <p>
-        © 2026 Star Boy (Amenjildo Odeke) |
-        Professional Pianist & Music Expert
-    </p>
-</footer>
-
+  <div class="topbar">You are welcome at Kihiihi Community Church · Everyone has a place here</div>
+  <header>
+    <nav class="sans">
+      <a class="brand" href="#home"><span class="cross">✝</span><span>Kihiihi<br>Community Church</span></a>
+      <button class="menu" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#ministries">Ministries</a></li><li><a href="#events">Events</a></li><li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-primary" href="#contact">Join Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home"><div class="hero-inner"><div class="eyebrow">Faith · Fellowship · Community</div><h1>Growing in faith.<br>Serving together.</h1><p>Welcome to Kihiihi Community Church, a family devoted to worshipping God, caring for one another, and blessing our community.</p><div class="buttons"><a class="btn btn-primary" href="#services">Plan Your Visit</a><a class="btn btn-outline" href="#about">Discover Our Story</a></div></div></section>
+    <section id="about"><div class="container welcome"><img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=80" alt="Sunlight shining through trees"><div><div class="eyebrow">Welcome home</div><h2>A church family for everyone</h2><p class="quote">“Let us consider how we may spur one another on toward love and good deeds.”</p><p>At Kihiihi Community Church, we believe church is more than a building—it is people walking together in faith. Whether you are exploring Christianity or have followed Jesus for years, you are welcome here.</p><a class="btn btn-primary" href="#contact" style="margin-top:22px">Meet Our Church</a></div></div></section>
+    <section class="schedule" id="services"><div class="container"><div class="section-heading"><div class="eyebrow">Come as you are</div><h2>Join us this week</h2><p>We would love to worship with you. Bring your family, invite a friend, and come as you are.</p></div><div class="schedule-grid"><div class="service-card"><div class="day">Every Sunday</div><strong>Morning Worship</strong><p>9:00 AM – 11:00 AM</p><p>Join us for worship, teaching, prayer, and fellowship.</p></div><div class="service-card"><div class="day">Every Wednesday</div><strong>Bible Study</strong><p>5:00 PM – 6:30 PM</p><p>Grow deeper in God's Word and connect with other believers.</p></div><div class="service-card"><div class="day">Every Friday</div><strong>Prayer Meeting</strong><p>5:00 PM – 6:00 PM</p><p>There is power when we seek God together in prayer.</p></div></div></div></section>
+    <section id="ministries"><div class="container"><div class="section-heading"><div class="eyebrow">Growing together</div><h2>Find your place</h2><p>There is room for every generation to learn, serve, and build meaningful relationships.</p></div><div class="cards"><div class="card"><div class="icon">👨‍👩‍👧‍👦</div><h3>Children & Families</h3><p>Fun, safe, and faith-filled activities that help children discover God's love.</p></div><div class="card"><div class="icon">🌱</div><h3>Youth Fellowship</h3><p>A welcoming space for young people to grow in faith and support each other.</p></div><div class="card"><div class="icon">🤝</div><h3>Community Outreach</h3><p>Serving our neighbors through compassion, practical help, and generosity.</p></div></div></div></section>
+    <section class="events" id="events"><div class="container"><div class="section-heading"><div class="eyebrow">Mark your calendar</div><h2>Upcoming events</h2><p>Come and be part of what is happening at Kihiihi Community Church.</p></div><div class="cards"><div class="event"><div class="date"><b>15</b>JUN</div><div><h3>Community Fellowship</h3><p>After Sunday service · Church grounds</p></div></div><div class="event"><div class="date"><b>22</b>JUN</div><div><h3>Family & Friends Sunday</h3><p>9:00 AM · Bring someone special</p></div></div><div class="event"><div class="date"><b>29</b>JUN</div><div><h3>Community Outreach Day</h3><p>10:00 AM · Serving our neighborhood</p></div></div></div></div></section>
+    <section id="contact"><div class="container contact"><div><div class="eyebrow">We would love to hear from you</div><h2>Let’s connect</h2><p style="margin-top:15px">Have a question, need prayer, or want to get involved? Send us a message and our church team will get back to you.</p><ul class="contact-list"><li>📍 Kihiihi, Uganda</li><li>📞 <a href="tel:+256000000000">+256 000 000 000</a></li><li>✉️ <a href="mailto:hello@kihiihicommunitychurch.org">hello@kihiihicommunitychurch.org</a></li></ul></div><form onsubmit="sendMessage(event)"><input required name="name" placeholder="Your name" aria-label="Your name"><input required type="email" name="email" placeholder="Email address" aria-label="Email address"><textarea required name="message" placeholder="How can we help you?" aria-label="Message"></textarea><button class="btn btn-primary" type="submit" style="border:0;cursor:pointer">Send message</button><p id="form-status" class="sans" style="font-size:14px;color:var(--green)"></p></form></div></section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="cross">✝</span><span>Kihiihi Community Church</span></a><p>Growing in faith. Serving together. Blessing our community.</p><p style="margin-top:15px;color:#9cb5a9">© 2026 Kihiihi Community Church. All rights reserved.</p></footer>
+  <script>function sendMessage(e){e.preventDefault();document.getElementById('form-status').textContent='Thank you! Your message has been received. We will be in touch soon.';e.target.reset();}</script>
 </body>
 </html>
