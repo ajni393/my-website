@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Administration | Kihiihi Community Church</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="community.css">
+  <script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+  <div class="announcement">Church administration · Publish thoughtfully, serve faithfully</div>
+  <header><nav class="container"><a class="brand" href="index.html"><span class="brand-mark">✝</span><span class="brand-name">Kihiihi Community Church<small>Faith · Fellowship · Community</small></span></a><button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="nav-links"><a href="index.html">View website</a><a href="online.html">Watch &amp; Connect</a><a href="account.html">Your account</a></div></nav></header>
+  <main class="container admin-main">
+    <div class="admin-heading"><div><div class="kicker">Behind the scenes</div><h1>Church workspace.</h1><p>Keep our community informed, connected, and encouraged.</p></div><a class="text-link" href="account.html">Manage your account →</a></div>
+    <p id="admin-status" class="status" role="status" aria-live="polite">Checking administrator access…</p>
+    <div id="admin-denied" class="empty-state" hidden><h2>Administrator access required</h2><p>Log in with an account assigned the admin role. New registrations receive member access only.</p><a class="button" href="account.html">Log in or register</a><p class="field-help">For the first administrator, the site owner assigns the admin role in the Netlify Identity dashboard.</p></div>
+    <div id="admin-workspace" hidden>
+      <div class="tab-row"><button type="button" data-admin-tab="content" class="selected" aria-pressed="true">Videos &amp; church content</button><button type="button" data-admin-tab="users" aria-pressed="false">User accounts</button></div>
+      <div id="content-panel" class="admin-grid">
+        <aside class="editor-card"><h2 id="editor-title">Publish an update</h2><p class="field-help">Paste a public video link, not embed code. Drafts stay private until published.</p>
+          <form id="content-form" class="community-form">
+            <input name="id" type="hidden">
+            <label>Content type<select name="kind"><option value="video">Social video</option><option value="sermon">Sermon</option><option value="event">Event</option></select></label>
+            <label>Title<input name="title" required maxlength="160"></label>
+            <label>Description<textarea name="description" rows="4" maxlength="5000"></textarea></label>
+            <label id="video-url-field">Video link<input name="url" type="url" placeholder="https://www.youtube.com/watch?v=…" maxlength="2000" required><span class="field-help">YouTube, public Facebook videos, Instagram posts/Reels, or full TikTok video links.</span></label>
+            <div id="event-fields" hidden><label>Event date and time<input name="eventDate" type="datetime-local"><span class="field-help">Uses your device’s local time zone. Visitors see their local time.</span></label><label>Location<input name="location" maxlength="200"></label></div>
+            <label class="checkbox-label"><input name="published" type="checkbox" checked>Publish on the website</label>
+            <button class="button" type="submit" id="content-save">Publish update</button><button class="text-button" type="button" id="cancel-edit" hidden>Cancel editing</button>
+          </form>
+        </aside>
+        <div><div class="list-heading"><h2>Church library</h2><label>Show<select id="content-filter"><option value="all">All content</option><option value="video">Videos</option><option value="sermon">Sermons</option><option value="event">Events</option></select></label></div><div id="admin-content" class="management-list" aria-live="polite"></div></div>
+      </div>
+      <div id="users-panel" hidden><div class="list-heading"><div><h2>User accounts</h2><p>Grant admin access only to trusted church leaders. Your own role and account cannot be removed here.</p></div><button type="button" class="button" id="refresh-users">Refresh</button></div><div id="user-list" class="management-list"></div><div class="pagination"><button type="button" id="users-previous" class="text-button" disabled>← Previous</button><span id="users-page">Page 1</span><button type="button" id="users-next" class="text-button" disabled>Next →</button></div></div>
+      <details class="publishing-guide"><summary>How to add social media videos</summary><ol><li>Open the original video on YouTube, Facebook, Instagram, or TikTok and copy its public link.</li><li>Choose Social video or Sermon, add a title, and paste the link into Video link.</li><li>Choose whether to publish, then save. Published social videos appear on Watch &amp; Connect; sermons appear in the sermon archive.</li></ol><p>Instagram and Facebook content must be public and allow embedding. TikTok needs the full @username/video URL. Visitors choose “Load video” before a platform player loads; an original-platform link is always available if embedding is blocked. You do not upload video files or share your social media password.</p></details>
+    </div>
+    <noscript>JavaScript is required for administration.</noscript>
+  </main>
+  <footer><div class="container"><p>Kihiihi Community Church · Church administration</p></div></footer>
+</body>
+</html>

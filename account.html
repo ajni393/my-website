@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join the Kihiihi Community Church family, log in, or manage your account.">
+  <title>Your account | Kihiihi Community Church</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="community.css">
+  <script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+  <div class="announcement">Faith · Fellowship · Community</div>
+  <header><nav class="container"><a class="brand" href="index.html"><span class="brand-mark">✝</span><span class="brand-name">Kihiihi Community Church<small>Faith · Fellowship · Community</small></span></a><button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="nav-links"><a href="index.html">Home</a><a href="events.html">Events</a><a href="online.html">Watch &amp; Connect</a><a class="active" href="account.html">Your account</a></div></nav></header>
+  <main class="account-layout container">
+    <div class="account-intro"><div class="kicker">A place to belong</div><h1>Stay close to<br>your church family.</h1><p>Create an account or sign in. Services and church updates remain open for everyone to watch.</p><div class="account-note"><h3>Serving behind the scenes?</h3><p>Administrators use the same secure login. Your assigned role unlocks tools for videos, sermons, events, and user accounts.</p></div><a class="text-link" href="online.html">Explore Watch &amp; Connect →</a></div>
+    <div class="account-card">
+      <p id="account-status" class="status" role="status" aria-live="polite">Checking your account…</p>
+      <div id="auth-panel" hidden>
+        <div class="tab-row" aria-label="Account options"><button type="button" data-auth-mode="login" class="selected" aria-pressed="true">Log in</button><button type="button" data-auth-mode="signup" aria-pressed="false">Register</button></div>
+        <h2 id="auth-title">Welcome back</h2>
+        <form id="auth-form" class="community-form">
+          <label id="name-field" hidden>Your name<input name="name" autocomplete="name" maxlength="120"></label>
+          <label id="email-field">Email address<input type="email" name="email" autocomplete="email" required maxlength="254"></label>
+          <label id="password-field">Password<input type="password" name="password" autocomplete="current-password" required maxlength="128"></label>
+          <p id="password-help" class="field-help" hidden>Use at least 10 characters. Never reuse a password from another site.</p>
+          <button type="submit" class="button" id="auth-submit">Log in</button>
+        </form>
+        <button type="button" id="forgot-password" class="text-button">Forgot your password?</button>
+      </div>
+      <div id="member-panel" hidden>
+        <div class="kicker">Your church account</div><h2 id="member-greeting">Welcome</h2><p id="member-email"></p>
+        <p>You’re part of the family. Catch up on messages and find your next gathering.</p>
+        <div class="actions"><a class="button" href="online.html">Watch videos</a><a class="button button-light" href="events.html">Upcoming events</a></div>
+        <a id="admin-link" class="admin-entry" href="admin.html" hidden>Open administration →</a>
+        <form id="profile-form" class="community-form"><label>Your name<input name="name" autocomplete="name" required maxlength="120"></label><button class="button" type="submit">Save name</button></form>
+        <button type="button" class="text-button" id="logout">Log out</button>
+      </div>
+      <noscript>JavaScript is required to register or log in. You can still browse services and events.</noscript>
+    </div>
+  </main>
+  <footer><div class="container"><p>Kihiihi Community Church · Growing in faith. Serving together.</p><a href="contact.html">Need help? Contact the church →</a></div></footer>
+</body>
+</html>
